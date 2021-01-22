@@ -25,9 +25,12 @@ xhr.onload = () => {
     
           let img = document.createElement("a");
           let link = document.createTextNode(fetchHeader(x, 'Last-Modified'))
+          var newLinker = Date(link)
+          var newLink = document.createTextNode(newLinker)
+          console.log(newLink)
           let button = document.createElement("button")
           button.appendChild(img)
-          img.appendChild(link)
+          img.appendChild(newLink)
           img.title = "Title"
           img.href = x.href;
           var VideoDiv = document.getElementById("videoDiv")

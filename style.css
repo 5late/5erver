@@ -89,12 +89,12 @@ html{
 .videos{
     display: inline-block;
     margin: 10px;
-    padding: 10px;
+    padding: 12px;
     border-radius: 8px;
     background-color: #c53636ce;
     font-size: 1em;
     font-family: 'Mulish';
-    font-weight: 800;
+    font-weight: 1000;
 }
 
 .videos a {
