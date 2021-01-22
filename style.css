@@ -5,7 +5,7 @@ html{
 #title{
     font-size: 8rem;
     position: absolute;
-    left: 15%;
+    left: 42.5%;
     top: 5%;
     color: #c53636de;
     font-family: 'Righteous';
@@ -18,10 +18,10 @@ html{
 }
 
 #description{
-    font-size: 4rem;
+    font-size: 3rem;
     position: absolute;
-    left: 53%;
-    top: 30%;
+    left: 38%;
+    top: 32%;
     color: #c53636de;
     font-family: 'Mulish';
 }
@@ -29,7 +29,7 @@ html{
 #descriptionBox{
     width: 100%;
     height: 30vh;
-    top: 30%;
+    top: 24%;
 }
 
 #browseButton{
@@ -67,4 +67,31 @@ html{
     z-index: -1;
     transform: translate(0,100%);
     transition: all .25s ease;
+}
+
+#serverIcon{
+    font-size: 6rem;
+    position: absolute;
+    left: 50%;
+    top: 53%;
+    color: #c53636de;
+}
+
+#videoDiv{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    column-count: 1;
+    column-gap: 0;
+    width: 30vw;
+}
+
+.videos{
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+}
+
+.videos a {
+    text-decoration: none;
 }

@@ -8,14 +8,33 @@ xhr.onload = () => {
     var elements = xhr.response.getElementsByTagName("a");
     for (x of elements) {
       if ( x.href.match(/\.(mp4)$/) ) { 
+
+    function fetchHeader(url, wch) {
+        try {
+            var req=new XMLHttpRequest();
+            req.open("HEAD", url, false);
+            req.send(null);
+            if(req.status== 200){
+                return req.getResponseHeader(wch);
+            }
+            else return false;
+        } catch(er) {
+            return er.message;
+        }
+    }
+    
           let img = document.createElement("a");
-          let link = document.createTextNode('This is a link')
+          let link = document.createTextNode(fetchHeader(x, 'Last-Modified'))
+          let button = document.createElement("button")
+          button.appendChild(img)
           img.appendChild(link)
           img.title = "Title"
           img.href = x.href;
-          document.body.appendChild(img);
+          var VideoDiv = document.getElementById("videoDiv")
+          VideoDiv.appendChild(button);
           var time = document.lastModified
           console.log(time)
+          button.className = "videos"
       } 
     };
   } 
@@ -25,18 +44,4 @@ xhr.onload = () => {
 }
 xhr.send()
 
-function fetchHeader(url, wch) {
-    try {
-        var req=new XMLHttpRequest();
-        req.open("HEAD", url, false);
-        req.send(null);
-        if(req.status== 200){
-            return req.getResponseHeader(wch);
-        }
-        else return false;
-    } catch(er) {
-        return er.message;
-    }
-}
-
-dates.push(fetchHeader('../vids/vid2.mp4','Last-Modified'));
+console.log(dates)
