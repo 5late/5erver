@@ -13,7 +13,6 @@ xhr.onload = () => {
     function getFilenameAndExtension(pathfilename){
       var filenameextension = pathfilename.replace(/^.*[\\\/]/, '')
       var filename = filenameextension.substring(0, filenameextension.lastIndexOf('.'))
-      var ext = filenameextension.split('.').pop();
       var filenamer = filename.replace(/%20/g," ")
 
       return [filenamer];
