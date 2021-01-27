@@ -19,4 +19,6 @@ The use for a locally hosted file system is simple. It allows you to have a dedi
 Having your files locally hosted rather than in the Cloud allows you to have complete control over your own data without fear of privacy related issues.
 
 
-**INSTRUCTIONS TO BUILD COMING SOON**
+**QUICK START FOR 5ERVER IS HERE**
+
+Go to [this](https://drive.google.com/file/d/1wv_pCZj_63F5YdekDLOGboFvkIPzhw7Z/view?usp=sharing) link to view the quick start instructions to install and set up 5erver.
