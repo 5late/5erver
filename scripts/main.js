@@ -19,7 +19,12 @@ xhr.onload = () => {
       return [filenamer];
     }
 
-    function get 
+    function getExtension(pathfilename){
+      var filenameextension = pathfilename.replace(/^.*[\\\/]/, '')
+      var ext = filenameextension.split('.').pop();
+
+      return [ext];
+    }
     
     console.log(getFilenameAndExtension(x.href))
           let img = document.createElement("a");
@@ -34,7 +39,7 @@ xhr.onload = () => {
           VideoDiv.appendChild(button);
           button.className = "videos"
           let h3 = document.createElement("h3")
-          h3.innerHTML = 'File Type:' + 
+          h3.innerHTML = '.'+getExtension(x.href)
           VideoDiv.appendChild(h3)
           h3.className = "ext"
       } 
