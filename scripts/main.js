@@ -7,26 +7,23 @@ xhr.onload = () => {
   if (xhr.status === 200) {
     var elements = xhr.response.getElementsByTagName("a");
     for (x of elements) {
-      if ( x.href.match(/\.(mp4)$/) ) { 
+      if ( x.href.match(/\.(mp4)$/) || x.href.match(/\.(mkv)$/) || x.href.match(/\.(mov)$/) || x.href.match(/\.(webm)$/) || x.href.match(/\.(mp3)$/) || x.href.match(/\.(jpg)$/) || x.href.match(/\.(png)$/)) { 
 
-    function fetchHeader(url, wch) {
-        try {
-            var req=new XMLHttpRequest();
-            req.open("HEAD", url, false);
-            req.send(null);
-            if(req.status== 200){
-                return req.getResponseHeader(wch);
-            }
-            else return false;
-        } catch(er) {
-            return er.message;
-        }
+
+    function getFilenameAndExtension(pathfilename){
+      var filenameextension = pathfilename.replace(/^.*[\\\/]/, '')
+      var filename = filenameextension.substring(0, filenameextension.lastIndexOf('.'))
+      var ext = filenameextension.split('.').pop();
+      var filenamer = filename.replace(/%20/g," ")
+
+      return [filenamer];
     }
+
+    function get 
     
+    console.log(getFilenameAndExtension(x.href))
           let img = document.createElement("a");
-          let link = document.createTextNode(fetchHeader(x, 'Last-Modified'))
-          var newLinker = Date(link)
-          var newLink = document.createTextNode(newLinker)
+          var newLink = document.createTextNode(getFilenameAndExtension(x.href))
           console.log(newLink)
           let button = document.createElement("button")
           button.appendChild(img)
@@ -35,9 +32,11 @@ xhr.onload = () => {
           img.href = x.href;
           var VideoDiv = document.getElementById("videoDiv")
           VideoDiv.appendChild(button);
-          var time = document.lastModified
-          console.log(time)
           button.className = "videos"
+          let h3 = document.createElement("h3")
+          h3.innerHTML = 'File Type:' + 
+          VideoDiv.appendChild(h3)
+          h3.className = "ext"
       } 
     };
   } 

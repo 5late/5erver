@@ -101,3 +101,9 @@ html{
     text-decoration: none;
     color: #000;
 }
+
+.ext{
+    color: #c53636ce;
+    font-weight: 800;
+    font-size: 1.2rem;
+}
