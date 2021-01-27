@@ -2,14 +2,26 @@
 
 **What is 5erver?**
 
+*Update on Jan 27 2021*
+5erver now officially supports the following file types:
+-mp4
+-webm
+-mov
+-mkv
+-mp3
+-jpg
+-png
 
-5erver is a locally hosted video* file server.
+However, HTML5 only has support for playing mp4 and webm videos in the browser. As a result, all other video files will not stream off the Pi, but rather prompt a download onto your machine. These HTML-unsupported files will still show up on the webpage, so it is still possible to download them on other machines from the server.
+
+-----
+
+5erver is a locally hosted file server.
 
 Files are uploaded via SCP (secure copy) to a Raspberry Pi running an Apache server.
 
 The files are then available for viewing at the website. (The website is the ip assigned to the Raspberry Pi.)
 
-*The file server can be tweaked to support other file types/other formats if familiar with the JavaScript code.
 
 **Why Use 5erver?**
 
