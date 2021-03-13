@@ -33,6 +33,6 @@ Having your files locally hosted rather than in the Cloud allows you to have com
 
 **QUICK START FOR 5ERVER IS HERE**
 
-Go to [this](https://drive.google.com/file/d/1wv_pCZj_63F5YdekDLOGboFvkIPzhw7Z/view?usp=sharing) link to view the quick start instructions to install and set up 5erver.
+Go to [this link](https://drive.google.com/file/d/1wv_pCZj_63F5YdekDLOGboFvkIPzhw7Z/view?usp=sharing) to view the quick start instructions to install and set up 5erver.
 
 You can also go to the quickstart folder in this repository and view the quick start instructions there.
