@@ -5,7 +5,6 @@ html{
 #title{
     font-size: 8rem;
     position: absolute;
-    left: 42.5%;
     top: 5%;
     color: #c53636de;
     font-family: 'Righteous';
@@ -14,13 +13,14 @@ html{
 
 #titleBox{
     width: 100%;
+    display: flex;
+    justify-content: center;
     height: 30vh;
 }
 
 #description{
     font-size: 3rem;
     position: absolute;
-    left: 38%;
     top: 32%;
     color: #c53636de;
     font-family: 'Mulish';
@@ -28,6 +28,8 @@ html{
 
 #descriptionBox{
     width: 100%;
+    display: flex;
+    justify-content: center;
     height: 30vh;
     top: 24%;
 }
@@ -38,11 +40,11 @@ html{
     font-size: large;
     font-weight: 800;
     position: absolute;
-    top: 70%;
-    left: 45%;
+    top: 70vh;
+    left: 43vw;
     background-color: #000;
     border-radius: 15px;
-    border: 2px solid #000;
+    border: 2px solid #c53636de;
     overflow: hidden;
     color: #c53636de;
 }
@@ -69,11 +71,48 @@ html{
     transition: all .25s ease;
 }
 
+#uploadButton{
+    width: 12vw;
+    height: 6vh;
+    font-size: large;
+    font-weight: 800;
+    position: absolute;
+    top: 85vh;
+    left: 44.5vw;
+    background-color: transparent;
+    border-radius: 15px;
+    border: 2px solid #000000;
+    overflow: hidden;
+    color: #c53636de;
+}
+
+#uploadButton:hover{
+    color: #000;
+    z-index: 1;
+}
+
+#uploadButton:hover::after{
+    transform: translate(0);
+}
+
+#uploadButton::after{
+    content: '';
+    position: absolute;
+    left: 0%;
+    bottom: 0%;
+    width: 100%;
+    height: 100%;
+    background: #c53636de;
+    z-index: -1;
+    transform: translate(0,100%);
+    transition: all .25s ease;
+}
+
 #serverIcon{
     font-size: 6rem;
     position: absolute;
-    left: 50%;
-    top: 53%;
+    left: 47.5vw;
+    top: 53vh;
     color: #c53636de;
 }
 
