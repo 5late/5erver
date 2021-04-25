@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io"
+	"log"
 	"net/http"
 	"os"
 	"text/template"
@@ -12,6 +13,15 @@ var templates = template.Must(template.ParseFiles("public/upload.html"))
 
 func displayHTML(w http.ResponseWriter, page string, data interface{}) {
 	templates.ExecuteTemplate(w, page+".html", data)
+}
+
+func moveFile(filename string) {
+	oldLocation := "./" + filename
+	newLocation := `./vids/` + filename
+	err := os.Rename(oldLocation, newLocation)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func uploadFile(w http.ResponseWriter, r *http.Request) {
@@ -38,6 +48,8 @@ func uploadFile(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
+
+	moveFile(handler.Filename)
 
 	// Copy the uploaded file to the created file on the filesystem
 	if _, err := io.Copy(f, file); err != nil {
