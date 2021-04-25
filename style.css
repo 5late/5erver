@@ -153,3 +153,44 @@ html{
     margin-bottom: 30px;
     margin-left: 18.5vw;
 }
+
+#fileUpload{
+    height: 15vh;
+    color: #000;
+    font-size: 2vh;
+}
+
+input[type="file"]{
+    display: none;
+}
+
+#customUpload{
+    border: 4px solid #c53636de;
+    color: #c53636de;
+    border-radius: 15px;
+    display: inline-block;
+    padding: 30px 50px;
+    cursor: pointer;
+    position: absolute;
+    top: 45vh;
+    left: 44vw;
+    font-size: 4vh;
+    background-color: #000;
+    font-family: 'Mulish';
+}
+
+#submitButton{
+    position: absolute;
+    top: 63vh;
+    left: 46.25vw;
+    width: 12vw;
+    height: 6vh;
+    font-size: large;
+    font-weight: 800;
+    background-color: transparent;
+    border-radius: 15px;
+    border: 2px solid #000000;
+    overflow: hidden;
+    color: #c53636de;
+    cursor: pointer;
+}

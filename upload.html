@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish">
 </head>
 <body>
     <div id="submitDiv">
         <form action="http://localhost:1337" enctype="multipart/form-data" method="POST"></form>
+        <label for="fileUpload" id="customUpload">
+            Upload File!
+        </label>
         <input type="file" name="fileDrop" id="fileUpload">
-        <input type="submit" value="upload" id="submitButton">
+        <input type="submit" value="Submit" id="submitButton">
     </div>
 </body>
 </html>
