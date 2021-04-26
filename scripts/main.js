@@ -1,7 +1,7 @@
 var dates = [];
 
 var xhr = new XMLHttpRequest();
-xhr.open("GET", "../vids", true);
+xhr.open("GET", "../vids/", true);
 xhr.responseType = 'document';
 xhr.onload = () => {
   if (xhr.status === 200) {
