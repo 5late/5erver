@@ -27,7 +27,7 @@ func moveFile(filename string) {
 func uploadFile(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Uploading File")
 	// Maximum upload of 10 MB files
-	r.ParseMultipartForm(10 << 20)
+	r.ParseMultipartForm(1024 << 20)
 
 	// Get handler for filename, size and headers
 	file, handler, err := r.FormFile("myFile")
