@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Upload File</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish">
   </head>
   <body>
     <form
@@ -12,8 +13,78 @@
       action="http://localhost:1337/upload"
       method="post"
     >
-      <input type="file" name="myFile" />
-      <input type="submit" value="upload" />
+    <label for="fileUpload" id="customUpload">Upload File</label>
+      <input type="file" name="myFile" id="fileUpload" onchange="javascript:updateList()"/>
+      <input type="submit" value="Submit" id="submitButton"/>
     </form>
+    <div id="fileList"></div>
+    <style>
+      html{
+        background-color: #000000d5;
+      }
+      input[type="file"]{
+          display: none;
+      }
+
+      #customUpload{
+          border: 4px solid #c53636de;
+          color: #c53636de;
+          border-radius: 15px;
+          display: inline-block;
+          padding: 30px;
+          cursor: pointer;
+          position: absolute;
+          top: 30vh;
+          left: 43vw;
+          font-size: 4vh;
+          background-color: #000;
+          font-family: 'Mulish';
+          text-align: center;
+      }
+
+      #submitButton{
+          position: absolute;
+          top: 63vh;
+          left: 44vw;
+          width: 12vw;
+          height: 6vh;
+          font-size: large;
+          font-weight: 800;
+          background-color: transparent;
+          border-radius: 15px;
+          border: 2px solid #000000;
+          overflow: hidden;
+          color: #c53636de;
+          cursor: pointer;
+          font-size: 3vh;
+      }
+      .file{
+        position: absolute;
+        top: 50vh;
+        left: 47.5vw;
+        font-size: 2vh;
+        font-weight: 800;
+        font-family: 'Mulish';
+        list-style-type: none;
+        color: #c53636de;
+      }
+    </style>
+    <script>
+      updateList = function() {
+        let input = document.getElementById('fileUpload')
+        let output = document.getElementById('fileList')
+        
+
+        output.innerHTML = `<ul>`;
+        for(var i=0; i< input.files.length; i++) {
+          let fileA = document.createElement('li')
+          fileA.innerText = input.files.item(i).name;
+          fileA.className = 'file';
+          output.appendChild(fileA)
+          //output.innerHTML += `<li>` + input.files.item(i).name + `</li>`;
+        }
+        output.innerHTML += `</ul>`;
+      }
+    </script>
   </body>
 </html>

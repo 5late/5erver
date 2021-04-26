@@ -69,6 +69,8 @@ func setupRoutes(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	fmt.Println("Hello World!")
+	fs := http.FileServer(http.Dir("./vids"))
+	http.Handle("/", fs)
 	http.HandleFunc("/upload", setupRoutes)
 	http.ListenAndServe(":1337", nil)
 }
