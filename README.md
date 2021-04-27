@@ -1,39 +1,37 @@
 # 5erver
 
-**What is 5erver?**
+## What is 5erver?
 
-*Update on Jan 27 2021*
+**5erver is the local host file server for everyone.**
 
-5erver now officially supports the following file types:
--mp4
--webm
--mov
--mkv
--mp3
--jpg
--png
+- 5erver allows you to be in full control of your data.
+- 5erver allows anyone on your wifi to see the files, but no one outside can.
+- 5erver2 allows you to upload files *directly* from the website, rather than using the previous long command line input.
+- 5erver is stylized to be easy on the eyes, while providing enough detail to show you exactly what you need, whenever you see it. 
+- 5erver is customizable.
 
-However, HTML5 only has support for playing mp4 and webm videos in the browser. As a result, all other video files will not stream off the Pi, but rather prompt a download onto your machine. These HTML-unsupported files will still show up on the webpage, so it is still possible to download them on other machines from the server.
-
------
-
-5erver is a locally hosted file server.
-
-Files are uploaded via SCP (secure copy) to a Raspberry Pi running an Apache server.
-
-The files are then available for viewing at the website. (The website is the ip assigned to the Raspberry Pi.)
-
-
-**Why Use 5erver?**
-
-
-The use for a locally hosted file system is simple. It allows you to have a dedicated space for large files (videos/images/etc). 
-
-Having your files locally hosted rather than in the Cloud allows you to have complete control over your own data without fear of privacy related issues.
-
-
-**QUICK START FOR 5ERVER IS HERE**
+## Installation
 
 Go to [this link](https://drive.google.com/file/d/1wv_pCZj_63F5YdekDLOGboFvkIPzhw7Z/view?usp=sharing) to view the quick start instructions to install and set up 5erver.
 
 You can also go to the quickstart folder in this repository and view the quick start instructions there.
+
+## 5erver 2.0
+
+5erver2.0 comes with a lot of new features, bug fixes, and cleaner ways to do things.
+
+**Old 5erver**
+![Old 5erver](./imgs/old5erver.png)
+
+**New 5erver**
+![New 5erver](./imgs/new5erver.png)
+
+## Acknowledgements
+
+- Legends for UI
+    - fork & giv for styling
+
+# License
+
+**Licensed under the Apache2.0 license.**
+Visit the Licence file for more information.
