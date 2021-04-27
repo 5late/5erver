@@ -55,4 +55,4 @@ You can also go to the quickstart folder in this repository and view the quick s
 # License
 
 **Licensed under the Apache2.0 license.**
-Visit the Licence file for more information.
+Visit the [LICENSE file](LICENSE) for more information.
