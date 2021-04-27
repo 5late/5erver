@@ -58,8 +58,13 @@ func uploadFile(w http.ResponseWriter, r *http.Request) {
 	}
 
 	filename := handler.Filename
+	contentType, err := getFileEnding(f)
+	if err != nil {
+		log.Println(err)
+	}
+
 	moveFile(filename)
-	CreateJSON(`./vids/`+filename, filename)
+	CreateJSON(`./vids/`+filename, filename, contentType)
 
 	// Copy the uploaded file to the created file on the filesystem
 	if _, err := io.Copy(f, file); err != nil {
@@ -68,7 +73,7 @@ func uploadFile(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func CreateJSON(vSource string, vTitle string) {
+func CreateJSON(vSource string, vTitle string, fileType string) {
 	filename := "video.json"
 	file, err := ioutil.ReadFile("video.json")
 	if err != nil {
@@ -80,8 +85,9 @@ func CreateJSON(vSource string, vTitle string) {
 	json.Unmarshal(file, &datas)
 
 	newStruct := &videoData{
-		Source: vSource,
-		Title:  vTitle,
+		Source:   vSource,
+		Title:    vTitle,
+		Filetype: fileType,
 	}
 
 	datas = append(datas, *newStruct)
@@ -95,6 +101,19 @@ func CreateJSON(vSource string, vTitle string) {
 	if err != nil {
 		log.Println(err)
 	}
+}
+
+func getFileEnding(out *os.File) (string, error) {
+	buffer := make([]byte, 512)
+
+	_, err := out.Read(buffer)
+	if err != nil {
+		log.Println(err)
+	}
+
+	contentType := http.DetectContentType(buffer)
+
+	return contentType, nil
 }
 
 func setupRoutes(w http.ResponseWriter, r *http.Request) {
