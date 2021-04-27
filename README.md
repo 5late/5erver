@@ -18,13 +18,19 @@ You can also go to the quickstart folder in this repository and view the quick s
 
 ## 5erver 2.0
 
-5erver2.0 comes with a lot of new features, bug fixes, and cleaner ways to do things.
+5erver2.0 comes with a lot of new features, bug fixes, and more effiecent usage of resources.
 
 **Old 5erver**
 ![Old 5erver](./imgs/old5erver.png)
 
 **New 5erver**
 ![New 5erver](./imgs/new5erver.png)
+
+**Old 5erver Upload**
+![Old 5erver upload](./imgs/old5erverupload.png)
+
+**New 5erver Upload**
+![New 5erver Upload](./imgs/new5erverupload.png)
 
 ## Acknowledgements
 
