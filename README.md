@@ -18,7 +18,15 @@ You can also go to the quickstart folder in this repository and view the quick s
 
 ## 5erver 2.0
 
-5erver2.0 comes with a lot of new features, bug fixes, and more effiecent usage of resources.
+5erver2.0 comes with a lot of new features, bug fixes, and more effiecent code.
+
+### New features include:
+- Facelifted landing sight
+- ***Much*** easier to use uploading system.
+- More reliable uploading to the Pi.
+- Faster upload times.
+- Newer, faster JavaScript.
+- A backend.
 
 **Old 5erver**
 ![Old 5erver](./imgs/old5erver.png)
@@ -32,6 +40,11 @@ You can also go to the quickstart folder in this repository and view the quick s
 **New 5erver Upload**
 ![New 5erver Upload](./imgs/new5erverupload.png)
 
+**Old 5erver JavaScript**
+![Old 5erver JavaScript](./imgs/old5erverjs.png)
+
+**New 5erver JavaScript**
+![New 5erver JavaScript](./imgs/new5erverjs.png)
 ## Acknowledgements
 
 - Legends for UI
