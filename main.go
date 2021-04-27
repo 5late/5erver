@@ -10,6 +10,8 @@ import (
 	"os"
 	"path/filepath"
 	"text/template"
+
+	"github.com/rs/cors"
 )
 
 type videoData struct {
@@ -52,11 +54,11 @@ func uploadFile(w http.ResponseWriter, r *http.Request) {
 	fmt.Printf("MIME Header: %+v\n", handler.Header)
 
 	f, err := os.Create(handler.Filename)
-	defer f.Close()
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
+	defer f.Close()
 
 	filename := handler.Filename
 	contentType := filepath.Ext(handler.Filename)
@@ -115,8 +117,13 @@ func ServeJSON(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	mux := http.NewServeMux()
+
 	fmt.Println("Hello World!")
-	http.HandleFunc("/json", ServeJSON)
-	http.HandleFunc("/upload", setupRoutes)
-	http.ListenAndServe(":1337", nil)
+
+	mux.HandleFunc("/json", ServeJSON)
+	mux.HandleFunc("/upload", setupRoutes)
+
+	handler := cors.Default().Handler(mux)
+	http.ListenAndServe(":1337", handler)
 }
