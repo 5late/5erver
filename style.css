@@ -133,6 +133,7 @@ html{
 
 #videoDiv button{
     width: 17vw;
+    cursor: pointer;
 }
 
 .videos{
