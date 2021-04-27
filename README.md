@@ -1,5 +1,7 @@
 # 5erver
 
+5erver v2.0 release! [Read More](https://github.com/5late/5erver#5erver-20)
+
 ## What is 5erver?
 
 **5erver is the local host file server for everyone.**
