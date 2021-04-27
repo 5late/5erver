@@ -8,6 +8,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"path/filepath"
 	"text/template"
 )
 
@@ -58,10 +59,7 @@ func uploadFile(w http.ResponseWriter, r *http.Request) {
 	}
 
 	filename := handler.Filename
-	contentType, err := getFileEnding(f)
-	if err != nil {
-		log.Println(err)
-	}
+	contentType := filepath.Ext(handler.Filename)
 
 	moveFile(filename)
 	CreateJSON(`./vids/`+filename, filename, contentType)
@@ -103,19 +101,6 @@ func CreateJSON(vSource string, vTitle string, fileType string) {
 	}
 }
 
-func getFileEnding(out *os.File) (string, error) {
-	buffer := make([]byte, 512)
-
-	_, err := out.Read(buffer)
-	if err != nil {
-		log.Println(err)
-	}
-
-	contentType := http.DetectContentType(buffer)
-
-	return contentType, nil
-}
-
 func setupRoutes(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case "GET":
@@ -125,10 +110,13 @@ func setupRoutes(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+func ServeJSON(w http.ResponseWriter, r *http.Request) {
+	http.ServeFile(w, r, "video.json")
+}
+
 func main() {
 	fmt.Println("Hello World!")
-	fs := http.FileServer(http.Dir("./vids"))
-	http.Handle("/", fs)
+	http.HandleFunc("/json", ServeJSON)
 	http.HandleFunc("/upload", setupRoutes)
 	http.ListenAndServe(":1337", nil)
 }

@@ -1,4 +1,4 @@
-var dates = [];
+/*var dates = [];
 
 var xhr = new XMLHttpRequest();
 xhr.open("GET", "../vids/", true);
@@ -50,4 +50,6 @@ xhr.onload = () => {
 }
 xhr.send()
 
-console.log(dates)
+console.log(dates)*/
+
+fetch(`http://localhost:1337/`)
