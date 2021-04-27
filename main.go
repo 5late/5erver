@@ -1,13 +1,21 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
+	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
 	"text/template"
 )
+
+type videoData struct {
+	Source   string `json:"source"`
+	Title    string `json:"title"`
+	Filetype string `json:"filetype"`
+}
 
 var templates = template.Must(template.ParseFiles("public/upload.html"))
 
@@ -49,12 +57,43 @@ func uploadFile(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	moveFile(handler.Filename)
+	filename := handler.Filename
+	moveFile(filename)
+	CreateJSON(`./vids/`+filename, filename)
 
 	// Copy the uploaded file to the created file on the filesystem
 	if _, err := io.Copy(f, file); err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
+	}
+}
+
+func CreateJSON(vSource string, vTitle string) {
+	filename := "video.json"
+	file, err := ioutil.ReadFile("video.json")
+	if err != nil {
+		log.Println(err)
+	}
+
+	datas := []videoData{}
+
+	json.Unmarshal(file, &datas)
+
+	newStruct := &videoData{
+		Source: vSource,
+		Title:  vTitle,
+	}
+
+	datas = append(datas, *newStruct)
+
+	dataBytes, err := json.MarshalIndent(datas, "", "   ")
+	if err != nil {
+		log.Println(err)
+	}
+
+	err = ioutil.WriteFile(filename, dataBytes, 0644)
+	if err != nil {
+		log.Println(err)
 	}
 }
 

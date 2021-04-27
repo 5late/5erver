@@ -1,5 +1,5 @@
 html{
-    background-color: #000000e1;
+    background-color: #0a0d0fee;
 }
 
 #title{
@@ -42,19 +42,24 @@ html{
     position: absolute;
     top: 70vh;
     left: 43vw;
-    background-color: #000;
+    background-color: #c53636de;
     border-radius: 15px;
-    border: 2px solid #c53636de;
+    border: 4px solid #000;
     overflow: hidden;
-    color: #c53636de;
+    color: #000;
 }
 
 #browseButton:hover{
-    color: #000;
+    color: #c53636de;
     z-index: 1;
+    border: 2px solid #c53636de;
+    transform: scale(5vh);
+    transition: all linear 500ms;
 }
 
 #browseButton:hover::after{
+    background-color: #000;
+    color: #c53636de;
     transform: translate(0);
 }
 
@@ -81,13 +86,14 @@ html{
     left: 44.5vw;
     background-color: transparent;
     border-radius: 15px;
-    border: 2px solid #000000;
+    border: 2px solid #c53636de;
     overflow: hidden;
     color: #c53636de;
 }
 
 #uploadButton:hover{
     color: #000;
+    border: 2px solid #000;
     z-index: 1;
 }
 
