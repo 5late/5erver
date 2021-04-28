@@ -9,6 +9,7 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"strings"
 	"text/template"
 
 	"github.com/rs/cors"
@@ -62,9 +63,10 @@ func uploadFile(w http.ResponseWriter, r *http.Request) {
 
 	filename := handler.Filename
 	contentType := filepath.Ext(handler.Filename)
+	nameOnly := strings.ReplaceAll(filename, contentType, "")
 
 	moveFile(filename)
-	CreateJSON(`./vids/`+filename, filename, contentType)
+	CreateJSON(`./vids/`+filename, nameOnly, contentType)
 
 	// Copy the uploaded file to the created file on the filesystem
 	if _, err := io.Copy(f, file); err != nil {
