@@ -40,13 +40,14 @@ html{
     font-size: large;
     font-weight: 800;
     position: absolute;
-    top: 70vh;
+    top: 55vh;
     left: 43vw;
     background-color: #c53636de;
     border-radius: 15px;
     border: 4px solid #000;
     overflow: hidden;
     color: #000;
+    cursor: pointer;
 }
 
 #browseButton:hover{
@@ -82,13 +83,14 @@ html{
     font-size: large;
     font-weight: 800;
     position: absolute;
-    top: 85vh;
+    top: 75vh;
     left: 44.5vw;
     background-color: transparent;
     border-radius: 15px;
     border: 2px solid #c53636de;
     overflow: hidden;
     color: #c53636de;
+    cursor: pointer;
 }
 
 #uploadButton:hover{
@@ -115,10 +117,10 @@ html{
 }
 
 #serverIcon{
-    font-size: 6rem;
+    font-size: 4vh;
     position: absolute;
-    left: 47.5vw;
-    top: 53vh;
+    left: 5vw;
+    top: 1.5vh;
     color: #c53636de;
 }
 
@@ -141,8 +143,9 @@ html{
     margin: 10px;
     padding: 12px;
     border-radius: 8px;
-    background-color: #c53636ce;
-    font-size: 1em;
+    background-color: #000000ce;
+    color: #c53636de;
+    font-size: 2vh;
     font-family: 'Mulish';
     font-weight: 1000;
 }
@@ -160,47 +163,14 @@ html{
     margin-bottom: 30px;
     margin-left: 18.5vw;
 }
-/*
-#fileUpload{
-    height: 15vh;
-    color: #000;
-    font-size: 2vh;
-}
 
-input[type="file"]{
-    display: none;
-}
-
-#customUpload{
-    border: 4px solid #c53636de;
+#topIcon{
     color: #c53636de;
-    border-radius: 15px;
-    display: inline-block;
-    padding: 30px 50px;
-    cursor: pointer;
+    font-size: 3vh;
+    font-family: 'Righteous';
+    font-style: italic;
     position: absolute;
-    top: 45vh;
-    left: 44vw;
-    font-size: 4vh;
-    background-color: #000;
-    font-family: 'Mulish';
+    top: -5.5vh;
+    left: 0vw;
 }
 
-#submitButton{
-    position: absolute;
-    top: 63vh;
-    left: 46.25vw;
-    width: 12vw;
-    height: 6vh;
-    font-size: large;
-    font-weight: 800;
-    background-color: transparent;
-    border-radius: 15px;
-    border: 2px solid #000000;
-    overflow: hidden;
-    color: #c53636de;
-    cursor: pointer;
-}
-
-/*https://medium.com/wesionary-team/file-uploading-in-go-44111404a506
-https://github.com/TannerGabriel/learning-go/blob/master/beginner-programs/FileUpload/main.go
