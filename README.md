@@ -44,10 +44,12 @@ You can also go to the quickstart folder in this repository and view the quick s
 
 ![New 5erver Upload](./imgs/new5erverupload.png)
 
-**Old 5erver JavaScript**
+**Old 5erver Uploaded Button**
+
 ![Old 5erver JavaScript](./imgs/old5erveruploaded.png)
 
-**New 5erver JavaScript**
+**New 5erver Uploaded Button**
+
 ![New 5erver JavaScript](./imgs/new5erveruploaded.png)
 ## Acknowledgements
 
