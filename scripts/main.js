@@ -39,12 +39,13 @@ function createSeperateButtons() {
   let uniqNames = remove_duplicates_safe(names)
   let uniqFiletypes =  remove_duplicates_safe(filetypes)
 
+  console.log(uniqNames, uniqSources, uniqFiletypes)
+
   for(var i = 0; i < uniqSources.length; i++) {
-    createButtons(uniqSources[i], uniqNames[i], uniqFiletypes[i])
+    createButtons(uniqSources[i], uniqNames[i], filetypes[i])
   }
 
 }
-
 
 function fetchJSON(){
 fetch(`http://localhost:1337/json`).then(response => response.json()).then(data => {
