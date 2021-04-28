@@ -37,7 +37,7 @@ func moveFile(filename string) {
 }
 
 func uploadFile(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Your file has been successfully uploaded. Thanks for using 5erver!")
+	displayHTML(w, "uploadfinish", nil)
 	// Maximum upload of 1 GB files
 	r.ParseMultipartForm(1024 << 20)
 
