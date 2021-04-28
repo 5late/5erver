@@ -4,17 +4,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Righteous">
     <title>Upload Finished!</title>
+    <script src="https://kit.fontawesome.com/1c2c2462bf.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <h1 id="uploadFinishText">Your upload has finished. Thanks for using 5erver!</h1>
-    <a href="http://localhost" id="homePage"><h5>Return to Home Page</h5></a>
+    <a href="http://localhost" id="homePage"><h5>Return to Home</h5></a>
+    <a href="http://localhost"><i class="fas fa-home" id="homeIcon"></i></a>
+    <img alt="dance" id="pepe">
 
     <style>
+        html{
+            background-color: #0a0d0fee;
+        }
         #uploadFinishText{
             font-size: 5vh;
             color: #c53636de;
+            text-align: center;
+            position: relative;
+            top: 30vh;
+            font-family: 'Mulish';
+        }
+        #homePage{
+            font-size: 4vh;
+            color: #c53636de;
+            text-align: center;
+            text-decoration: none;
+            position: relative;
+            top: 35vh;
+            font-family: 'Righteous';
+        }
+        #homeIcon{
+            font-size: 4vh;
+            color: #c53636de;
+            position: absolute;
+            left: 41vw;
+            top: 49.75vh;
+        }
+        #pepe{
+            position: absolute;
+            left: 40vw;
+            top: 60vh;
+            width: 20vw;
         }
     </style>
+    <script>
+        const pepeLinks = ["https://s3.us-east-2.amazonaws.com/ugc.app/images/user/kfiMzgKTrI17tjB3MD3uhC13Zv6vMkhrA2ZjuPTffWUSXyGQwNcIJpfFaukNxMn5VwZL5zNrm0QDQ2HeoZBzM372gVRdfgmQKF4DNSfD0hckmSnaXuo0sb5jqcQGh.gif", "https://i.pinimg.com/originals/ac/2a/ab/ac2aab4b58cd4472edcfd62bd4618177.gif", "https://steamuserimages-a.akamaihd.net/ugc/90478827543126518/9D9560F89BB9152F2B65CF5BFB9406BEAEDF603E/", "https://media.tenor.com/images/5d205d32bbd12bf4dec943cf9b82f62b/tenor.gif"]
+        const randomPepe = pepeLinks[Math.floor(Math.random() * pepeLinks.length)]
+
+        let pepeImg = document.getElementById('pepe')
+        pepeImg.src = randomPepe
+    </script>
 </body>
 </html>
