@@ -10,7 +10,6 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
-	"text/template"
 
 	"github.com/rs/cors"
 )
@@ -21,10 +20,10 @@ type videoData struct {
 	Filetype string `json:"filetype"`
 }
 
-var templates = template.Must(template.ParseFiles("public/upload.html"))
+//var templates = template.Must(template.ParseFiles("public/upload.html"))
 
-func displayHTML(w http.ResponseWriter, page string, data interface{}) {
-	templates.ExecuteTemplate(w, page+".html", data)
+func displayHTML(w http.ResponseWriter, page string, r *http.Request) {
+	http.ServeFile(w, r, "./public/"+page+".html")
 }
 
 func moveFile(filename string) {
@@ -37,7 +36,7 @@ func moveFile(filename string) {
 }
 
 func uploadFile(w http.ResponseWriter, r *http.Request) {
-	displayHTML(w, "uploadfinish", nil)
+	displayHTML(w, "uploadfinish", r)
 	// Maximum upload of 1 GB files
 	r.ParseMultipartForm(1024 << 20)
 
@@ -108,7 +107,7 @@ func CreateJSON(vSource string, vTitle string, fileType string) {
 func setupRoutes(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case "GET":
-		displayHTML(w, "upload", nil)
+		displayHTML(w, "upload", r)
 	case "POST":
 		uploadFile(w, r)
 	}
