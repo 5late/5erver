@@ -17,10 +17,11 @@ function createButtons(source, name, filetype) {
   document.body.appendChild(videoDiv)
 }
 
-
+function fetchJSON(){
 fetch(`http://localhost:1337/json`).then(response => response.json()).then(data => {
   console.log(data)
   for(var i = 0; i < data.length; i++) {
     createButtons(data[i].source, data[i].title, data[i].filetype)
   }
 })
+}
